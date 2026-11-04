@@ -11,6 +11,10 @@ openjdk 21.0.13 2026-10-20
 
 mvn --version
 Apache Maven 3.9.9
+Maven home: /usr/share/maven
+Java version: 21.0.13, vendor: Debian, runtime: /usr/lib/jvm/java-21-openjdk-amd64
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "6.12.113+deb13-amd64", arch: "amd64", family: "unix"
 
 ```
 
@@ -21,7 +25,7 @@ Apache Maven 3.9.9
 
 ## A8 дахь lenient()
 
-A8-д мөр бүр (NO_STUDENT, INACTIVE_STUDENT, PREREQUISITES) өөр өөр stub тохируулдаг, тиймээс нэг мөрөнд хэрэглэгдээгүй stub нь MockitoExtension-ий strict stubs горимд UnnecessaryStubbingException өгөх байсан. `lenient().when(...)` хэрэглэснээр ийм stub-ууд алдаа өгөхгүй.
+A8-д `lenient().when(...)` ашигласан боловч одоогийн `switch` бүтэц мөр бүрд зөвхөн шаардлагатай stub-уудыг тохируулдаг тул `lenient()` зайлшгүй шаардлагагүй. Харин ашиглагдаагүй stub байгаа үед `lenient()` нь тухайн stub-оос үүдэх `UnnecessaryStubbingException` алдааг дарах зориулалттай.
 
 ## Хэсэг B: мини мутаци
 
